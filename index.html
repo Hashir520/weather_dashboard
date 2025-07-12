@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Weather Dashboard</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by city or zip code...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="current-weather">
+                <div class="weather-header">
+                    <h2 id="current-city">Loading...</h2>
+                    <div class="date-time" id="current-date">--</div>
+                </div>
+                <div class="weather-main">
+                    <div class="temperature-container">
+                        <div class="current-temp" id="current-temp">--°</div>
+                        <div class="weather-icon" id="weather-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                    </div>
+                    <div class="weather-desc" id="weather-desc">--</div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <span id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <span id="wind-speed">-- m/s</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-temperature-low"></i>
+                            <span id="feels-like">--°</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="forecast">
+                <h2 class="forecast-title">5-Day Forecast</h2>
+                <div class="forecast-container" id="forecast-container">
+                
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <button id="unit-toggle" class="btn-toggle">Switch to °F</button>
+            <button id="refresh-btn" class="btn-refresh">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+        </footer>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
