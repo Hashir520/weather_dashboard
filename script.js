@@ -33,8 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
 function handleSearch() {
     const location = searchInput.value.trim();
     if (location) {
-        currentLocation = location;
-        fetchWeatherData(location);
+       
+        if (/^\d+$/.test(location)) {
+            
+            const country = prompt("Please enter the 2-letter country code (e.g., US, CA, IN,PK):");
+            if (country && country.length === 2) {
+                currentLocation = `${location},${country.toUpperCase()}`;
+            } else {
+                alert("Please enter a valid 2-letter country code");
+                return;
+            }
+        } 
+       
+        else if (location.includes(',')) {
+            currentLocation = location;
+        }
+  
+        else {
+            currentLocation = location;
+        }
+        
+        fetchWeatherData(currentLocation);
         searchInput.value = '';
     }
 }
